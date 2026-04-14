@@ -1,3 +1,12 @@
+/*
+========================================
+Create Tables for Bronze Layer
+========================================
+
+Script Purpose:
+This script creates new tables from the bronze layer. The bronze layer consist of 6 tables in total.
+*/
+
 CREATE TABLE bronze.crm_cust_info (
 cst_id INT,
 cst_key NVARCHAR(50),
