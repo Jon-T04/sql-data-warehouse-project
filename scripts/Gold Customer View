@@ -1,3 +1,12 @@
+/*
+========================================
+Gold Customer View
+========================================
+
+Script Purpose:
+This script creates the gold layer view for customers.
+*/
+
 CREATE VIEW gold.dim_customers AS
 SELECT
 ROW_NUMBER() OVER (ORDER BY cst_id) AS customer_key,
