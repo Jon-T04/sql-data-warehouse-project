@@ -3,7 +3,7 @@ Cumulative Analysis
 ==============================================================================================
 */
 
--- Calculate the toal sales per month and the running total of sales over time
+-- Calculate the total sales per month and the running total of sales over time
 -- Finding the moving average price
 
 SELECT
