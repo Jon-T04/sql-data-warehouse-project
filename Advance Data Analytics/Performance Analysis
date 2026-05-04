@@ -28,12 +28,12 @@ current_sales - AVG(current_sales) OVER (PARTITION BY product_name) AS diff_avg,
 CASE WHEN current_sales - AVG(current_sales) OVER (PARTITION BY product_name) > 0 THEN 'Above Avg'
 	 WHEN current_sales - AVG(current_sales) OVER (PARTITION BY product_name) < 0 THEN 'Below Avg'
 	 ELSE 'Avg'
-END avg_change,
+END threshold,
 LAG(current_sales) OVER (PARTITION BY product_name ORDER BY order_year) previous_year_sales,
 current_sales - LAG(current_sales) OVER (PARTITION BY product_name ORDER BY order_year) AS diff_previous_year,
 CASE WHEN current_sales - LAG(current_sales) OVER (PARTITION BY product_name ORDER BY order_year) > 0 THEN 'Increase'
 	 WHEN current_sales - LAG(current_sales) OVER (PARTITION BY product_name ORDER BY order_year) < 0 THEN 'Decrease'
 	 ELSE 'No Change'
-END avg_change
+END trend
 FROM yearly_product_sales
 ORDER BY product_name, order_year
