@@ -9,7 +9,7 @@ SELECT SUM(sales_amount) AS total_sales FROM gold.fact_sales
 SELECT SUM(quantity) AS total_sales FROM gold.fact_sales
 
 -- Find the average selling price
-SELECT AVG(price) AS avaerage_price FROM gold.fact_sales
+SELECT AVG(price) AS average_price FROM gold.fact_sales
 
 -- Find the total number of orders
 SELECT COUNT(DISTINCT order_number) AS total_orders FROM gold.fact_sales
@@ -28,7 +28,7 @@ SELECT 'Total Sales' AS measure_name, SUM(sales_amount) AS measure_value FROM go
 UNION ALL
 SELECT 'Total Quantity', SUM(quantity) FROM gold.fact_sales
 UNION ALL
-SELECT 'Average Price', SUM(quantity) AS measure_value FROM gold.fact_sales
+SELECT 'Average Price', AVG(price) AS average_price FROM gold.fact_sales
 UNION ALL
 SELECT 'Total Nr. Orders', COUNT(DISTINCT order_number) FROM gold.fact_sales
 UNION ALL
