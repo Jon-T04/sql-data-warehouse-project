@@ -28,7 +28,7 @@ SELECT 'Total Sales' AS measure_name, SUM(sales_amount) AS measure_value FROM go
 UNION ALL
 SELECT 'Total Quantity', SUM(quantity) FROM gold.fact_sales
 UNION ALL
-SELECT 'Average Price', AVG(price) AS average_price FROM gold.fact_sales
+SELECT 'Average Price', AVG(price) FROM gold.fact_sales
 UNION ALL
 SELECT 'Total Nr. Orders', COUNT(DISTINCT order_number) FROM gold.fact_sales
 UNION ALL
